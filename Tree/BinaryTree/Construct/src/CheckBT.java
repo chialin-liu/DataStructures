@@ -8,15 +8,6 @@ class TreeNode{
 }
 public class CheckBT {
     public boolean checkSameBT(TreeNode A, TreeNode B){
-    //    Stack<TreeNode> stackA=new Stack<TreeNode>();
-    //    Stack<TreeNode> stackB=new Stack<TreeNode>();
-    //    TreeNode curA=A;
-    //    TreeNode curB=B;
-    //    while(curA!=null){
-    //        stackA.push(curA);
-    //
-    //    }
-        //static boolean root = true;
         boolean BOOL;
         if((A==null)&(B==null)){
             return true;
