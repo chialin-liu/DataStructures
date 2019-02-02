@@ -1,5 +1,7 @@
 //package com.company;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 class TreeNode{
@@ -20,11 +22,16 @@ class Inoder {
         System.out.println(root.val);
         inorder_recursive(root.right);
     }
-    public void inorder_stack(TreeNode root){
+    //@Leetcode:94
+    public List<Integer> inorder_stack(TreeNode root){
         Stack<TreeNode> stack = new Stack<TreeNode>();
+        List<Integer> inorder_list = new ArrayList<Integer>();
         TreeNode cur = root;
         TreeNode pop = null;
-        if(cur==null){return ;}
+        if(cur==null){
+           // inorder_list.add(cur.val);
+            return inorder_list;
+        }
         stack.push(cur);
         while(!stack.isEmpty()) {
             while (cur != null) {
@@ -34,12 +41,14 @@ class Inoder {
                 }
             }
             pop = stack.pop();
-            System.out.println(pop.val);
+            inorder_list.add(pop.val);
+            //System.out.println(pop.val);
             cur = pop.right;
             if(cur!=null){
                 stack.push(cur);
             }
         }
+        return inorder_list;
     }
     public static void main(String[] args) {
         // write your code here
@@ -58,7 +67,12 @@ class Inoder {
         B.left = E;
         D.left = F;
         Inoder s1 = new Inoder();
-        s1.inorder_stack(root);
+        TreeNode NU=null;
+        List<Integer> list = new ArrayList<>();
+        list=s1.inorder_stack(NU);
+        for(int n: list){
+            System.out.println(n);
+        }
     }
 }
 
