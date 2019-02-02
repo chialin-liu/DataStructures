@@ -14,7 +14,7 @@ class Inoder {
             return;
         }
         inorder_recursive(root.left);
-        System.out.println(root);
+        System.out.println(root.val);
         inorder_recursive(root.right);
     }
 
@@ -28,7 +28,7 @@ class Inoder {
         TreeNode E = new TreeNode(3);
 
         root.left = A;
-        root.left = B;
+        root.right = B;
         A.left = C;
         A.right = D;
         B.left = E;
