@@ -27,9 +27,11 @@ class Inoder {
         if(cur==null){return ;}
         stack.push(cur);
         while(!stack.isEmpty()) {
-            while (cur.left != null) {
+            while (cur != null) {
                 cur = cur.left;
-                stack.push(cur);
+                if(cur!=null){
+                    stack.push(cur);
+                }
             }
             pop = stack.pop();
             System.out.println(pop.val);
