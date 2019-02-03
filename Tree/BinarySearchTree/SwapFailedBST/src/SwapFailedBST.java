@@ -10,21 +10,6 @@ class TreeNode{
     }
 }
 public class SwapFailedBST {
-    public void levelOrder(TreeNode root){
-        Queue<TreeNode> queue = new LinkedList<TreeNode>();
-        queue.add(root);
-        TreeNode pop;
-        while(!queue.isEmpty()){
-            pop=queue.poll();
-            if(pop.left!=null){
-                queue.add(pop.left);
-            }
-            System.out.println(pop.val);
-            if(pop.right!=null){
-                queue.add(pop.right);
-            }
-        }
-    }
     public TreeNode inorder_recover(TreeNode root){
         Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode first = null;
