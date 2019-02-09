@@ -29,6 +29,18 @@ public class balance {
             return a;
         }
     }
+    public int depth(TreeNode root){
+        if(root==null){
+            return 0;
+        }
+        return 1+minHeight(root);
+    }
+    public int minHeight(TreeNode root){
+        if(root==null){
+            return 0;
+        }
+        return 1+Math.min(minHeight(root.left),minHeight(root.right));
+    }
     public int height(TreeNode root){
         if(root==null){
             return 0;
@@ -46,11 +58,13 @@ public class balance {
         TreeNode C = new TreeNode(15);
         TreeNode D = new TreeNode(7);
         root.left = A;
-        root.right = B;
-        B.left = C;
-        B.right = D;
+        //root.right = B;
+        //B.left = C;
+        //B.right = D;
         balance b1 = new balance();
-        boolean bb=b1.checkBalance(root);
-        System.out.println("True or False:" + bb);
+        //boolean bb=b1.checkBalance(root);
+        int bb=b1.depth(root);
+        //System.out.println("True or False:" + bb);
+        System.out.println("Depth:" + bb);
     }
 }
